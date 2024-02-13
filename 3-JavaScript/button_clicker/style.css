@@ -1,0 +1,164 @@
+/*General rules*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Preahvihear', sans-serif;
+  }
+ 
+ h1 {font-size: 400%;
+ }
+ 
+ h2 {font-size: 300%;}
+ h3 {font-size: 200%;}
+ h4 , input {font-size:100%}
+ 
+ /*Header layout*/
+ header{
+   margin: 0 auto;
+   width: 90%;
+   display: flex;
+   background-color: #cccccc;
+   justify-content: space-between;
+   padding: 2%;
+   align-items: center;
+   box-sizing: border-box;
+   margin-bottom: 2%;
+ 
+ }
+ 
+ #Searchname{
+   margin:0%;
+   width: 40%;
+   height: 40px;
+   border: 4px solid black;
+ }
+ 
+ #btn{
+   color: #ebf7f9;
+   background-color: #2b78e4;
+   box-shadow: 5PX 7PX 0PX black; 
+   border: 2px solid black;
+   margin:0%;
+   width: 7%;
+   height: 10%;
+   font-size: 150%;
+ }
+ 
+ /*Main Layout*/
+ 
+ main {
+   margin: 0 auto;
+   width: 90%;
+   height: 1024px; /*Delete when page is completed*/
+   padding: 0%;
+   display: flex;
+   box-sizing: border-box;
+ }
+ 
+ .div2 {
+   height: 70%;
+   flex:2;
+   margin-right: 2%;
+   display: flex;
+   flex-direction:column;
+   box-sizing: border-box;
+ }
+ 
+ 
+ .div2a {
+   flex:1;
+   border: 4px solid black;
+   display: flex;
+ 
+ }
+ 
+ .div2a1{
+   flex:1;
+ 
+   text-align: center;
+ }
+ 
+ .div2a2{
+   flex:3;
+ 
+ 
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 4%;
+ }
+ 
+ 
+ 
+ .div2b {
+   flex:1;
+   border: 4px solid black;
+   margin-top: 2%;
+   display: flex;
+   
+ }
+ 
+ 
+ 
+ 
+ .div2b1{
+   flex:1;
+   text-align: center;
+ 
+ }
+ 
+ .div2b2{
+   flex:3;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 4%;
+ }
+ 
+ 
+ .div3 {
+   flex:1;
+   display: flex;
+   flex-direction:column;
+   box-sizing: border-box;
+ }
+ 
+ .div3a {
+   height: auto;
+   border: 4px solid black;
+   padding: 5%;
+ }
+ 
+ #btn2{
+   color: black;
+   background-color: #93c47d;
+   box-shadow: 5PX 5PX 0PX black; 
+   border: 2px solid black;
+   width: 90%;
+   height: 20%;
+   font-size: 200%;
+   font-weight: bold;
+   margin: 0 auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ 
+ #btn3, #btn4 {
+   color: black;
+   background-color: #ffd966;
+   box-shadow: 5PX 5PX 0PX black; 
+   border: 2px solid black;
+   width: 90%;
+   height: 15%;
+   font-size: 150%;
+   font-weight: bold;
+   margin: 0 auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ 
+ .containerbuttons{
+   margin-top: 10%;
+ }
