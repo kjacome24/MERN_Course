@@ -1,44 +1,49 @@
-var beatles = ['Paul', 'George', 'John', 'Ringo']
-function printNames(names) {
-
-	for( const i = 0; i < beatles.length; i++){
-		console.log(names[i])
+const animal = {
+	type:"bird"
 }
+const animalCopy = {...animal}
+animalCopy.type = "turtle"
+console.log("Original: " + animal.type, "The Copy: " + animalCopy.type)
 
+// Spread deep copy
+const personcopy  = {...person}; 
+
+personcopy.firstName = 'Ziggy';
+personcopy.addresses[0].city = 'New York';
+console.log(personcopy); // Ziggy
+console.log(person);
+
+
+
+const person = [1,2]
+const personCopy = [...person]
+
+
+const animals = ['horse', 'dog', 'fish', 'cat', 'bird'];
+const [firstAnimal, secondAnimal, ...rest] = animals;  
+console.log(rest); 
+
+// ------------------------
+
+let state = [1, 2, 3, 4, 5]
+const useState = [
+    //Array index 0; A Getter Function
+    function () {
+        return state
+    },
+    //Array index 1; A Setter Function
+    function (newStateValue) {
+        state = newStateValue
+        return state
+    }
+];
+const [getter, setter] = useState;
+
+
+function update(param1, param2) {
+    setter([...param1, param2])
+    return state
 }
-
-printNames(beatles2)
-
-
-let arrays = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-arrays = 'd'
-let cat 
-cat = 'd'
-
-
-// Hoisting - elevacion
-var foo = "bar";
-function magic(){
-    foo = "hello world";
-    console.log(foo);
-    // var foo;
-}
-magic();
-console.log(foo);
-
-
-console.log(magicalUnicorns);
-var magicalUnicorns = "awesome";
-
-
-// GIVEN
-console.log(example);
-var example = "I'm the example!";
-AFTER HOISTING BY THE INTERPRETER
-// var example;
-// console.log(example); // logs undefined
-// example = "I'm the example!";
-
-
-
+update(getter(), 6)
+console.log(state) //Output: [1, 2, 3, 4, 5, 6]
 
