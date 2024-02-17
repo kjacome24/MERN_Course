@@ -178,3 +178,90 @@ const newObj = {...obj, name: "Joe"}
 console.log(newObj)
 //Executes the inherited arrowMethod on the newObj
 newObj.arrowMethod()
+
+
+
+// ----------------------------------------Ternary statement
+let canAfford = (itemPrice, accountBalance) =>{
+    return itemPrice > accountBalance // condition
+    ?  `Cannot afford! You are $${itemPrice - accountBalance}  short` // if true
+    : "Can afford!"; // if false
+    }
+
+    let myAccountBalance = 1000;
+    const drone = 1001;
+    let droneOnSale = drone - drone * 0.03;
+    console.log(canAfford(drone, myAccountBalance));
+    console.log(canAfford(droneOnSale, myAccountBalance));
+    
+    
+
+console.log(canAfford(500, 300))
+
+
+
+
+
+
+-------------------------------------------
+
+function smallest( arr ) {
+    let min = arr[0];
+    for( let element of arr ) {
+        console.log(element)
+        if( element < min ) {
+            min = element;
+        }
+    }
+    return min;
+}
+console.log(smallest( [2, 5, 6, 12, 14, 28, 37, 41, 44, 45,1,5] ));
+
+function smallest( sortedArr ) {
+    return sortedArr[0];
+}
+console.log(smallest( [2, 5, 6, 12, 14, 28, 37, 41, 44, 45,1,5] ));
+
+const results = [2, 5, 6, 12, 14, 28, 37, 41, 44, 45,1,5];
+
+for(let i=0; i<results.length; i++){
+    for(let value of results) {
+        for(let j=results.length-1; j>0; j--) {
+            console.log(i, value, j);
+        }
+    }
+}
+
+
+// ---------------------------------------------Fibonacci
+// recursive
+function rFib( n ) {
+    if ( n < 2 ) {
+        return n;
+    }
+    return rFib( n-1 ) + rFib( n-2 );
+}
+
+
+const { performance } = require('perf_hooks');
+const start = performance.now();
+let primeCount = 0;
+rFib(20);
+console.log(`This took ${performance.now() - start} milliseconds to run`);
+
+// iterative
+function iFib( n ) {
+    const vals = [ 0, 1 ];
+    while(vals.length-1 < n) {
+        let len = vals.length;
+        vals.push( vals[len-1] + vals[len-2] );
+    }
+    return vals[n];
+}
+iFib(20);
+
+const { performance } = require('perf_hooks');
+const start = performance.now();
+let primeCount = 0;
+iFib(20);
+console.log(`This took ${performance.now() - start} milliseconds to run`);

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="number">
+    <div id="square" style="width: 100px; height: 100px; background-color: red;"></div>
+    
+<script>
+var number = document.getElementById("number");
+var square = document.getElementById("square");
+function updateStyle() {
+  var value = number.value;
+  square.style.backgroundColor = value > 5 ? "blue" : "red";
+}
+number.addEventListener("input", updateStyle)
+updateStyle()
+</script>
+
+
+</body>
+</html>
