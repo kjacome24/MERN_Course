@@ -243,6 +243,7 @@ function rFib( n ) {
 }
 
 
+const { getRandomValues } = require('crypto');
 const { performance } = require('perf_hooks');
 const start = performance.now();
 let primeCount = 0;
@@ -265,3 +266,53 @@ const start = performance.now();
 let primeCount = 0;
 iFib(20);
 console.log(`This took ${performance.now() - start} milliseconds to run`);
+
+
+
+// -----------------------------------------------------
+
+arrayx = [1, 5, 7, 3]
+
+const left = (pivot,arr) => {
+    let left;
+    for (let i = 0; i <= pivot; i++) {
+        if (arr[i] >= arr[pivot]){
+            left =  i;
+            return left;
+        }
+}
+}
+
+const right = (pivot,arr) => {
+    let right;
+    for (let j = arr.length-1; j >= pivot; j--) {
+        if (arr[j] <= arr[pivot]){
+            right =  j;
+            return right;
+        }
+    }
+}
+
+const quickSort = (arr) => {
+    if (arr.length <= 1) {
+        return arr;
+    }
+    if (arr.length == 2) {
+        if (arr[0] > arr[1]) {
+            return [arr[1], arr[0]];
+        }
+        return arr;
+    }
+    var pivot = Math.floor(Math.random() * (arrayx.length - 2)) + 1;
+    let rightx = right (pivot,arr)
+    let leftx =  left (pivot,arr)
+    let temp = arr[rightx];
+    arr[rightx] = arr[leftx];
+    arr[leftx] = temp;
+    quickSort(arr.slice(0,pivot));
+    quickSort(arr.slice(pivot,arrayx.length - 1));
+    return arr;
+}
+console.log(quickSort(arrayx))
+
+
