@@ -315,4 +315,111 @@ const quickSort = (arr) => {
 }
 console.log(quickSort(arrayx))
 
+// ----------------------------------------------------------------
+const user1 = {
+        name: "Kermit",
+        email: "kermit@sesame.org"
+    }
+    
+// ---------------------------------------------------------------------Class Javascript
+class Vehicle {
+    constructor(manufacturer, model, color) {
+        this.manufacturer = manufacturer;
+        this.model = model;
+        this.color = color;
+        this.miles = 0;
+    }
+    drive() {
+        this.miles += 10;
+        console.log(`You drove your ${ this.constructor.name } and it now has ${ this.miles } miles on it.`);
+        return this;
+    }
+}
+
+const porshe911 = new Vehicle("Porshe", "911", "Yellow");
+porshe911.drive().drive().drive();
+
+class M5 extends Vehicle {
+    constructor(color) {
+        super("Mazda", "M3", color);
+        this.hp = 616;
+    }
+    printSpecSummary () {
+        console.log(`${ this.manufacturer } ${ this.model } in ${ this.color } has ${ this.hp }hp`);
+    }
+}
+
+
+const mazdaM3 = new M5("Red");
+mazdaM3.printSpecSummary();
+mazdaM3.drive().drive().drive();
+
+
+// ------------------------------------------Súper Continuado
+
+// clase principal de Vehicle 
+class Vehicle {
+    constructor(manufacturer, model, color) {
+        this.manufacturer = manufacturer;
+        this.model = model;
+        this.color = color;
+        this.miles = 0;
+    }
+    drive() {
+        this.miles += 10;
+        console.log(`You drove your ${ this.constructor.name } and it now has ${this.miles} miles on it.`);
+    }
+    // método simple de la clase
+    parentFunction(){
+        return "This is coming from the parent!";
+    }
+}
+// clase M5 hijo
+class M5 extends Vehicle {
+    constructor(color) {
+        super("BMW", "M5", color);
+    }
+    //funcion simple de la clase hijo
+    childFunction() {
+        // usando super, podemos llamar el método adre
+        const message = super.parentFunction();
+        console.log(message);
+    }
+}
+const m5 = new M5("Blue");
+m5.childFunction();
+console.log(m5.parentFunction());
+
+
+// ------------------------------------------Súper Continuado2 Heritage
+
+// clase principal de Vehicle 
+class Vehicle {
+    constructor(manufacturer, model, color) {
+        this.manufacturer = manufacturer;
+        this.model = model;
+        this.color = color;
+        this.miles = 0;
+    }
+    drive() {
+        this.miles += 10;
+        return this.miles;
+    }
+}
+// clase M5 hijo
+class M5 extends Vehicle {
+    constructor(color) {
+        super("BMW", "M5", color);
+    }
+    //funcion simple de la clase hijo
+    drive() {
+        // usando super, podemos llamar el método adre
+        const miles = super.drive()*2;
+        return miles;
+    }
+}
+const m5 = new M5("Blue");
+const porshe911 = new Vehicle("Porshe", "911", "Yellow");
+console.log(porshe911.drive());
+console.log(m5.drive());
 
