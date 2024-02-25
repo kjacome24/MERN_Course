@@ -598,3 +598,43 @@ const groceries = ["pearl onions", "cremini mushrooms", "thyme"];
 const oFoods = groceries.filter( item => item.includes("o") );
 
 console.log(oFoods);
+
+
+// -------------------------------------Curry functions / Curry es la idea de que solo ejecutas parte de una función, en lugar de todo.
+const add = x => y => z => x + y + z;
+console.log(add(10)(20)(30)); // 60
+
+function ninjaBelt(ninja){
+    return function belt(beltColor){ //tenga en cuenta el cierre aquí!
+        console.log("Ninja "+ ninja + " has earned a " + beltColor +" belt.");
+    }
+}
+  ninjaBelt('Eileen')('black'); //tenga en cuenta la doble invocación aquí. If u dont use the second () it will return just the first function
+
+
+
+//   -----------------------Closer Functions
+// here we have a function called "Outer"
+function outer() {
+    let count = 0; // this is a count variable that is scoped to the function
+    // there is an inner function that increments count and then console logs it
+    function inner() {
+      count++;
+      console.log(count);
+    }
+    // we're returning the inner function
+    return inner;
+  }
+
+  const counter = outer();   // counter is the function that we returned from calling the outer function
+  counter();                 // this will console.log "1"
+  counter();                 // this will console.log "2"
+  counter();                 // this will console.log "3"
+  counter();                 // this will console.log "4"
+
+  // so that means that the count variable still exists! 
+  // and it is being changed even though we aren't inside of the Outer function!
+  // can we access count out here?
+  console.log(count); // doesn't work!
+
+
