@@ -1,0 +1,9 @@
+/* styles.css */
+.btn {
+    border: 0;
+    padding: 12px 15px;
+    background: black;
+    font-size: 1em;
+    color: white;
+    font-weight: bold;
+}
